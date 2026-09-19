@@ -4,8 +4,11 @@
 <head>
 
     <!--
+    ========================================
+    jQuery Activity
     Name: Michael Barnes
     Date: September 19, 2026
+    ========================================
     -->
 
     <meta charset="UTF-8">
@@ -13,79 +16,34 @@
 
     <title>Common Uses of jQuery</title>
 
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="./styles/main.css" type="text/css">
+
     <!-- Local jQuery -->
     <script src="./resources/jquery.min.js"></script>
 
     <!-- Fallback to CDN if local jQuery fails -->
     <script>
         if (typeof jQuery === "undefined") {
+
+            console.log("Local jQuery failed. Loading CDN version.");
+
             document.write(
                 '<script src="https://code.jquery.com/jquery-4.0.0.min.js"><\/script>'
             );
+
+        } else {
+
+            console.log("Local jQuery loaded successfully.");
+
         }
     </script>
 
     <!-- jQuery Validation Plugin -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.22.1/dist/jquery.validate.min.js"></script>
 
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
-            line-height: 1.6;
-        }
-
-        main {
-            max-width: 700px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 25px;
-            border-radius: 8px;
-        }
-
-        nav {
-            margin-bottom: 25px;
-        }
-
-        nav a {
-            margin-right: 15px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-        }
-
-        label {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        input,
-        textarea {
-            padding: 8px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        textarea {
-            min-height: 120px;
-        }
-
-        button {
-            width: fit-content;
-            margin-top: 10px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
+    <!-- Custom JavaScript -->
+    <script src="./scripts/main.js"></script>
 
 </head>
 
@@ -98,7 +56,7 @@
         <nav>
             <a href="#summary">Summary</a>
             <a href="#validation">jQuery Validation Plugin</a>
-            <a href="#contactForm">Contact Form</a>
+            <a href="#contactForm">Form</a>
         </nav>
 
     </header>
@@ -110,11 +68,11 @@
             <h2>Summary</h2>
 
             <p id="summaryParagraph">
-                jQuery is a JavaScript library that makes many common web development tasks
-                easier. It can be used to manipulate HTML and CSS, respond to user events,
-                create effects and animations, and work with Ajax requests. jQuery also
-                provides a simple way to select and modify elements on a webpage, which can
-                reduce the amount of code a developer needs to write.
+                jQuery is a JavaScript library commonly used in web development to make
+                common tasks easier. It can be used to manipulate HTML and CSS, respond
+                to user events, create effects and animations, and work with Ajax
+                requests. jQuery also provides a simple way to select elements and
+                modify webpage content.
             </p>
 
         </section>
@@ -124,8 +82,8 @@
             <h2>jQuery Validation Plugin</h2>
 
             <p>
-                The jQuery Validation Plugin can be used to check information entered into
-                forms before the form is submitted.
+                The jQuery Validation Plugin can be used to check information entered
+                into a form before the form is submitted.
             </p>
 
             <p>
@@ -166,55 +124,11 @@
 
     </main>
 
-    <script>
+    <footer>
 
-        $(document).ready(function () {
+        <p>jQuery Activity</p>
 
-            // Change summary paragraph text color using jQuery
-            $("#summaryParagraph").css("color", "blue");
-
-            // Validate the form using the jQuery Validation Plugin
-            $("#contactForm").validate({
-
-                rules: {
-
-                    name: {
-                        required: true
-                    },
-
-                    email: {
-                        required: true,
-                        email: true
-                    },
-
-                    message: {
-                        required: true
-                    }
-
-                },
-
-                messages: {
-
-                    name: {
-                        required: "Please enter your name."
-                    },
-
-                    email: {
-                        required: "Please enter your email address.",
-                        email: "Please enter a valid email address."
-                    },
-
-                    message: {
-                        required: "Please enter a message."
-                    }
-
-                }
-
-            });
-
-        });
-
-    </script>
+    </footer>
 
 </body>
 
