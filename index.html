@@ -16,10 +16,10 @@
 
     <title>Common Uses of jQuery</title>
 
-    <!-- CSS Stylesheet -->
+    <!-- Link for CSS styles -->
     <link rel="stylesheet" href="./styles/main.css" type="text/css">
 
-    <!-- Local jQuery -->
+    <!-- Local jQuery Library -->
     <script src="./resources/jquery.min.js"></script>
 
     <!-- Fallback to CDN if local jQuery fails -->
@@ -56,7 +56,7 @@
         <nav>
             <a href="#summary">Summary</a>
             <a href="#validation">jQuery Validation Plugin</a>
-            <a href="#contactForm">Form</a>
+            <a href="#contactForm">Contact Form</a>
         </nav>
 
     </header>
@@ -82,8 +82,10 @@
             <h2>jQuery Validation Plugin</h2>
 
             <p>
-                The jQuery Validation Plugin can be used to check information entered
-                into a form before the form is submitted.
+                The jQuery Validation Plugin is used to check information entered into
+                a form before the form is submitted. It can check whether required
+                fields have been completed and whether information such as an email
+                address follows the correct format.
             </p>
 
             <p>
@@ -93,7 +95,8 @@
             </p>
 
             <p>
-                <a href="https://cdn.jsdelivr.net/npm/jquery-validation@1.22.1/dist/jquery.validate.min.js"
+                <a
+                    href="https://cdn.jsdelivr.net/npm/jquery-validation@1.22.1/dist/jquery.validate.min.js"
                     target="_blank">
                     jQuery Validation Plugin CDN
                 </a>
@@ -101,11 +104,11 @@
 
         </section>
 
-        <section>
+        <section id="contactForm">
 
             <h2>Contact Form</h2>
 
-            <form id="contactForm">
+            <form id="feedbackForm">
 
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name">
@@ -126,7 +129,7 @@
 
     <footer>
 
-        <p>jQuery Activity</p>
+        <p>&copy; Michael Barnes 2026</p>
 
     </footer>
 

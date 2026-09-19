@@ -12,7 +12,7 @@ $(document).ready(function () {
     $("#summaryParagraph").css("color", "blue");
 
     // Apply jQuery Validation to the form
-    $("#contactForm").validate({
+    $("#feedbackForm").validate({
 
         rules: {
 
