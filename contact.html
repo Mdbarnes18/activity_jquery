@@ -13,23 +13,21 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contact Us</title>
 
-    <!-- Link for CSS styles -->
-    <link rel="stylesheet" href="./styles/main.css" type="text/css">
+    <link rel="stylesheet" href="./styles/main.css" type="text/css" />
 
-    <!-- Local jQuery -->
+    <!-- jQuery -->
     <script src="./resources/jquery.min.js"></script>
 
-    <!-- Fallback to CDN if local jQuery fails -->
+    <!-- Fallback to CDN if local copy fails -->
     <script>
         if (typeof jQuery === "undefined") {
 
             console.log("Local jQuery failed. Loading CDN version.");
 
             document.write(
-                '<script src="https://code.jquery.com/jquery-4.0.0.min.js"><\/script>'
+                '<script src="https://code.jquery.com/jquery-3.7.1.min.js"><\/script>'
             );
 
         } else {
@@ -42,7 +40,7 @@
     <!-- jQuery Validation Plugin -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.22.1/dist/jquery.validate.min.js"></script>
 
-    <!-- Custom JavaScript -->
+    <!-- Custom script -->
     <script src="./scripts/main.js"></script>
 
 </head>
@@ -66,7 +64,7 @@
 
             <h2>Send Us a Message</h2>
 
-            <form id="feedbackForm">
+            <form id="feedback_form">
 
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name">

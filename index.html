@@ -13,23 +13,29 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Common Uses of jQuery</title>
 
     <!-- Link for CSS styles -->
-    <link rel="stylesheet" href="./styles/main.css" type="text/css">
+    <link rel="stylesheet" href="./styles/main.css" type="text/css" />
 
-    <!-- Local jQuery -->
+    <!-- JQuery Library -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+
+    <!-- =======================================
+    Attempt to load LOCAL jQuery first
+    ======================================= -->
     <script src="./resources/jquery.min.js"></script>
 
-    <!-- Fallback to CDN if local jQuery fails -->
+    <!-- =======================================
+    Fallback to CDN if local copy fails
+    ======================================= -->
     <script>
         if (typeof jQuery === "undefined") {
 
             console.log("Local jQuery failed. Loading CDN version.");
 
             document.write(
-                '<script src="https://code.jquery.com/jquery-4.0.0.min.js"><\/script>'
+                '<script src="https://code.jquery.com/jquery-3.7.1.min.js"><\/script>'
             );
 
         } else {
@@ -42,7 +48,7 @@
     <!-- jQuery Validation Plugin -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.22.1/dist/jquery.validate.min.js"></script>
 
-    <!-- Custom JavaScript -->
+    <!-- Custom script -->
     <script src="./scripts/main.js"></script>
 
 </head>
@@ -58,6 +64,7 @@
             <a href="contact.html">Contact</a>
             <a href="#summary">Summary</a>
             <a href="#validation">Validation Plugin</a>
+            <a href="#form">Form</a>
         </nav>
 
     </header>
@@ -69,11 +76,11 @@
             <h2>jQuery Summary</h2>
 
             <p id="summaryParagraph">
-                jQuery is a JavaScript library commonly used in web development to make
-                common tasks easier. It can be used to manipulate HTML and CSS, respond
-                to user events, create effects and animations, and work with Ajax
-                requests. jQuery also provides a simple way to select elements and
-                modify webpage content.
+                jQuery is a JavaScript library that helps developers perform common
+                web development tasks with less code. It is commonly used to select
+                and manipulate HTML elements, change CSS, handle user events, create
+                animations and effects, and work with Ajax requests. jQuery can make
+                interactive webpages easier to develop and maintain.
             </p>
 
         </section>
@@ -83,10 +90,9 @@
             <h2>jQuery Validation Plugin</h2>
 
             <p>
-                The jQuery Validation Plugin can be used to check information entered
-                into a form before the form is submitted. It can check whether required
-                fields have been completed and whether information such as an email
-                address follows the correct format.
+                The jQuery Validation Plugin is used to validate form information
+                before a form is submitted. It can check required fields and make
+                sure information such as email addresses follows the correct format.
             </p>
 
             <p>
@@ -105,24 +111,56 @@
 
         </section>
 
-        <section>
+        <section id="form">
 
             <h2>Required Information Form</h2>
 
-            <form id="feedbackForm">
+            <form id="activity_form">
 
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
+                <label for="activity_name">Name</label>
+                <input type="text" id="activity_name" name="activity_name">
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+                <label for="activity_email">Email</label>
+                <input type="email" id="activity_email" name="activity_email">
 
-                <label for="message">Message</label>
-                <textarea id="message" name="message"></textarea>
+                <label for="activity_message">Message</label>
+                <textarea id="activity_message" name="activity_message"></textarea>
 
                 <button type="submit">Submit</button>
 
             </form>
+
+        </section>
+
+        <section>
+
+            <h2>DOM Manipulation Exercise</h2>
+
+            <p id="introText">
+                This paragraph will be modified using jQuery.
+            </p>
+
+            <button id="changeTextBtn">Change Text</button>
+            <button id="hideTextBtn">Hide Text</button>
+            <button id="showTextBtn">Show Text</button>
+
+        </section>
+
+        <section>
+
+            <h2>Interactive Elements Exercise</h2>
+
+            <div class="color-box" id="box1">Hover Me</div>
+
+        </section>
+
+        <section>
+
+            <h2>Animation Exercise</h2>
+
+            <button id="animateBtn">Animate Box</button>
+
+            <div id="animateBox"></div>
 
         </section>
 
