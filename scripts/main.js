@@ -8,10 +8,17 @@ Date: September 19, 2026
 
 $(document).ready(function () {
 
-    // Change the summary paragraph text color using jQuery
+    /* ========================================
+    Change summary paragraph text color
+    ======================================== */
+
     $("#summaryParagraph").css("color", "blue");
 
-    // Apply jQuery Validation to the form
+
+    /* ========================================
+    Form validation
+    ======================================== */
+
     $("#feedbackForm").validate({
 
         rules: {
@@ -22,11 +29,17 @@ $(document).ready(function () {
 
             email: {
                 required: true,
-                email: true
+                email: true,
+                minlength: 8
+            },
+
+            subject: {
+                required: true
             },
 
             message: {
-                required: true
+                required: true,
+                minlength: 10
             }
 
         },
@@ -38,12 +51,37 @@ $(document).ready(function () {
             },
 
             email: {
-                required: "Please enter your email address.",
-                email: "Please enter a valid email address."
+                required: "Email is required.",
+                email: "Enter a valid email address.",
+                minlength: "Email must be at least 8 characters."
+            },
+
+            subject: {
+                required: "Please enter a subject."
             },
 
             message: {
-                required: "Please enter a message."
+                required: "Please enter a message.",
+                minlength: "Message must be at least 10 characters."
+            }
+
+        },
+
+        invalidHandler: function (event, validator) {
+
+            let errors = validator.numberOfInvalids();
+
+            if (errors) {
+
+                $(".form_errors").text(
+                    "You missed " + errors +
+                    " required field(s). Please correct them."
+                );
+
+            } else {
+
+                $(".form_errors").text("");
+
             }
 
         }

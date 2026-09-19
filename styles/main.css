@@ -101,6 +101,12 @@ button:hover {
     font-weight: bold;
 }
 
+.form_errors {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 footer {
     background-color: #333;
     color: white;
